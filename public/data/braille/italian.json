@@ -1,0 +1,67 @@
+[
+  {
+    "id": "it-a",
+    "language": "it",
+    "character": "a",
+    "brailleUnicode": "⠁",
+    "dots": [1],
+    "type": "letter",
+    "category": "Alphabet",
+    "rule": "Codice Braille Italiano",
+    "source": "Biblioteca Italiana per i Ciechi",
+    "verified": true,
+    "note": "Italian letter a"
+  },
+  {
+    "id": "it-a-grave",
+    "language": "it",
+    "character": "à",
+    "brailleUnicode": "⠡",
+    "dots": [1, 2, 3, 5, 6],
+    "type": "letter",
+    "category": "Accent",
+    "rule": "Codice Braille Italiano",
+    "source": "Biblioteca Italiana per i Ciechi",
+    "verified": true,
+    "note": "Italian letter à"
+  },
+  {
+    "id": "it-e-grave",
+    "language": "it",
+    "character": "è",
+    "brailleUnicode": "⠮",
+    "dots": [2, 3, 4, 6],
+    "type": "letter",
+    "category": "Accent",
+    "rule": "Codice Braille Italiano",
+    "source": "Biblioteca Italiana per i Ciechi",
+    "verified": true,
+    "note": "Italian letter è"
+  },
+  {
+    "id": "it-i-grave",
+    "language": "it",
+    "character": "ì",
+    "brailleUnicode": "⠌",
+    "dots": [3, 4],
+    "type": "letter",
+    "category": "Accent",
+    "rule": "Codice Braille Italiano",
+    "source": "Biblioteca Italiana per i Ciechi",
+    "verified": true,
+    "note": "Italian letter ì"
+  },
+  {
+    "id": "it-o-grave",
+    "language": "it",
+    "character": "ò",
+    "brailleUnicode": "⠬",
+    "dots": [2, 4, 6],
+    "type": "letter",
+    "category": "Accent",
+    "rule": "Codice Braille Italiano",
+    "source": "Biblioteca Italiana per i Ciechi",
+    "verified": true,
+    "note": "Italian letter ò"
+  }
+]

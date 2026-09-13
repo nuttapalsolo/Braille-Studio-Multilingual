@@ -1,0 +1,67 @@
+[
+  {
+    "id": "ru-a",
+    "language": "ru",
+    "character": "а",
+    "brailleUnicode": "⠁",
+    "dots": [1],
+    "type": "letter",
+    "category": "Cyrillic",
+    "rule": "Russian Braille Standard",
+    "source": "Russian National Braille Authority",
+    "verified": true,
+    "note": "Russian letter а"
+  },
+  {
+    "id": "ru-b",
+    "language": "ru",
+    "character": "б",
+    "brailleUnicode": "⠃",
+    "dots": [1, 2],
+    "type": "letter",
+    "category": "Cyrillic",
+    "rule": "Russian Braille Standard",
+    "source": "Russian National Braille Authority",
+    "verified": true,
+    "note": "Russian letter б"
+  },
+  {
+    "id": "ru-v",
+    "language": "ru",
+    "character": "в",
+    "brailleUnicode": "⠺",
+    "dots": [2, 4, 5, 6],
+    "type": "letter",
+    "category": "Cyrillic",
+    "rule": "Russian Braille Standard",
+    "source": "Russian National Braille Authority",
+    "verified": true,
+    "note": "Russian letter в"
+  },
+  {
+    "id": "ru-g",
+    "language": "ru",
+    "character": "г",
+    "brailleUnicode": "⠛",
+    "dots": [1, 2, 4, 5],
+    "type": "letter",
+    "category": "Cyrillic",
+    "rule": "Russian Braille Standard",
+    "source": "Russian National Braille Authority",
+    "verified": true,
+    "note": "Russian letter г"
+  },
+  {
+    "id": "ru-d",
+    "language": "ru",
+    "character": "д",
+    "brailleUnicode": "⠙",
+    "dots": [1, 4, 5],
+    "type": "letter",
+    "category": "Cyrillic",
+    "rule": "Russian Braille Standard",
+    "source": "Russian National Braille Authority",
+    "verified": true,
+    "note": "Russian letter д"
+  }
+]

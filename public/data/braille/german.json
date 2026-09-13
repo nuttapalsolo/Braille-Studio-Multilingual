@@ -1,0 +1,80 @@
+[
+  {
+    "id": "de-a",
+    "language": "de",
+    "character": "a",
+    "brailleUnicode": "⠁",
+    "dots": [1],
+    "type": "letter",
+    "category": "Alphabet",
+    "rule": "German Standard Braille",
+    "source": "BSVB Standard",
+    "verified": true,
+    "note": "German letter a"
+  },
+  {
+    "id": "de-b",
+    "language": "de",
+    "character": "b",
+    "brailleUnicode": "⠃",
+    "dots": [1, 2],
+    "type": "letter",
+    "category": "Alphabet",
+    "rule": "German Standard Braille",
+    "source": "BSVB Standard",
+    "verified": true,
+    "note": "German letter b"
+  },
+  {
+    "id": "de-ae",
+    "language": "de",
+    "character": "ä",
+    "brailleUnicode": "⠜",
+    "dots": [3, 4, 5],
+    "type": "letter",
+    "category": "Umlaut",
+    "rule": "German Special Characters",
+    "source": "BSVB Standard",
+    "verified": true,
+    "note": "German Umlaut ä"
+  },
+  {
+    "id": "de-oe",
+    "language": "de",
+    "character": "ö",
+    "brailleUnicode": "⠬",
+    "dots": [2, 4, 6],
+    "type": "letter",
+    "category": "Umlaut",
+    "rule": "German Special Characters",
+    "source": "BSVB Standard",
+    "verified": true,
+    "note": "German Umlaut ö"
+  },
+  {
+    "id": "de-ue",
+    "language": "de",
+    "character": "ü",
+    "brailleUnicode": "⠳",
+    "dots": [1, 2, 5, 6],
+    "type": "letter",
+    "category": "Umlaut",
+    "rule": "German Special Characters",
+    "source": "BSVB Standard",
+    "verified": true,
+    "note": "German Umlaut ü"
+  },
+  {
+    "id": "de-ss",
+    "language": "de",
+    "character": "ß",
+    "brailleUnicode": "⠮",
+    "dots": [2, 3, 4, 6],
+    "type": "letter",
+    "category": "Special",
+    "rule": "German Special Characters",
+    "source": "BSVB Standard",
+    "verified": true,
+    "note": "German Eszett ß"
+  }
+]

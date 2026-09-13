@@ -1,0 +1,67 @@
+[
+  {
+    "id": "ko-g",
+    "language": "ko",
+    "character": "ㄱ",
+    "brailleUnicode": "⠁",
+    "dots": [4],
+    "type": "consonant",
+    "category": "Initial Consonant",
+    "rule": "Hangeul Jeomja Standard",
+    "source": "Korean National Institute of Special Education",
+    "verified": true,
+    "note": "Korean Initial Giyeok"
+  },
+  {
+    "id": "ko-n",
+    "language": "ko",
+    "character": "ㄴ",
+    "brailleUnicode": "⠒",
+    "dots": [1, 4],
+    "type": "consonant",
+    "category": "Initial Consonant",
+    "rule": "Hangeul Jeomja Standard",
+    "source": "Korean National Institute of Special Education",
+    "verified": true,
+    "note": "Korean Initial Nieun"
+  },
+  {
+    "id": "ko-d",
+    "language": "ko",
+    "character": "ㄷ",
+    "brailleUnicode": "⠔",
+    "dots": [2, 4],
+    "type": "consonant",
+    "category": "Initial Consonant",
+    "rule": "Hangeul Jeomja Standard",
+    "source": "Korean National Institute of Special Education",
+    "verified": true,
+    "note": "Korean Initial Digeut"
+  },
+  {
+    "id": "ko-a",
+    "language": "ko",
+    "character": "ㅏ",
+    "brailleUnicode": "⠣",
+    "dots": [1, 2, 6],
+    "type": "vowel",
+    "category": "Vowel",
+    "rule": "Hangeul Jeomja Standard",
+    "source": "Korean National Institute of Special Education",
+    "verified": true,
+    "note": "Korean Vowel A"
+  },
+  {
+    "id": "ko-eo",
+    "language": "ko",
+    "character": "ㅓ",
+    "brailleUnicode": "⠜",
+    "dots": [2, 3, 4],
+    "type": "vowel",
+    "category": "Vowel",
+    "rule": "Hangeul Jeomja Standard",
+    "source": "Korean National Institute of Special Education",
+    "verified": true,
+    "note": "Korean Vowel EO"
+  }
+]

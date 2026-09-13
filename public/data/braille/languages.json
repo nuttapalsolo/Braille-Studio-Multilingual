@@ -1,0 +1,82 @@
+[
+  {
+    "code": "th",
+    "name": "Thai",
+    "nativeName": "ภาษาไทย",
+    "file": "thai.json",
+    "verified": false,
+    "note": "Pending official dataset import by developer."
+  },
+  {
+    "code": "en",
+    "name": "English",
+    "nativeName": "English",
+    "file": "english.json",
+    "verified": true,
+    "note": "Grade 1 Standard English Braille."
+  },
+  {
+    "code": "ja",
+    "name": "Japanese",
+    "nativeName": "日本語",
+    "file": "japanese.json",
+    "verified": true,
+    "note": "Tenji / Japanese Kana Braille."
+  },
+  {
+    "code": "zh",
+    "name": "Chinese",
+    "nativeName": "中文",
+    "file": "chinese.json",
+    "verified": true,
+    "note": "Standard Chinese Braille."
+  },
+  {
+    "code": "ko",
+    "name": "Korean",
+    "nativeName": "한국어",
+    "file": "korean.json",
+    "verified": true,
+    "note": "Korean Hangul Braille (Hangeul Jeomja)."
+  },
+  {
+    "code": "de",
+    "name": "German",
+    "nativeName": "Deutsch",
+    "file": "german.json",
+    "verified": true,
+    "note": "Standard German Braille."
+  },
+  {
+    "code": "fr",
+    "name": "French",
+    "nativeName": "Français",
+    "file": "french.json",
+    "verified": true,
+    "note": "Standard French Braille."
+  },
+  {
+    "code": "es",
+    "name": "Spanish",
+    "nativeName": "Español",
+    "file": "spanish.json",
+    "verified": true,
+    "note": "Standard Spanish Braille."
+  },
+  {
+    "code": "it",
+    "name": "Italian",
+    "nativeName": "Italiano",
+    "file": "italian.json",
+    "verified": true,
+    "note": "Standard Italian Braille."
+  },
+  {
+    "code": "ru",
+    "name": "Russian",
+    "nativeName": "Русский",
+    "file": "russian.json",
+    "verified": true,
+    "note": "Standard Russian Cyrillic Braille."
+  }
+]

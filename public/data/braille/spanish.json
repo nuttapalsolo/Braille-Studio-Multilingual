@@ -1,0 +1,67 @@
+[
+  {
+    "id": "es-a",
+    "language": "es",
+    "character": "a",
+    "brailleUnicode": "⠁",
+    "dots": [1],
+    "type": "letter",
+    "category": "Alphabet",
+    "rule": "Codigo Braille Espanol",
+    "source": "ONCE Braille Standard",
+    "verified": true,
+    "note": "Spanish letter a"
+  },
+  {
+    "id": "es-n-tilde",
+    "language": "es",
+    "character": "ñ",
+    "brailleUnicode": "⠯",
+    "dots": [1, 2, 4, 5, 6],
+    "type": "letter",
+    "category": "Special",
+    "rule": "Codigo Braille Espanol",
+    "source": "ONCE Braille Standard",
+    "verified": true,
+    "note": "Spanish letter ñ"
+  },
+  {
+    "id": "es-a-accent",
+    "language": "es",
+    "character": "á",
+    "brailleUnicode": "⠌",
+    "dots": [1, 2, 3, 5, 6],
+    "type": "letter",
+    "category": "Accent",
+    "rule": "Codigo Braille Espanol",
+    "source": "ONCE Braille Standard",
+    "verified": true,
+    "note": "Spanish a accented á"
+  },
+  {
+    "id": "es-e-accent",
+    "language": "es",
+    "character": "é",
+    "brailleUnicode": "⠿",
+    "dots": [1, 2, 3, 4, 5, 6],
+    "type": "letter",
+    "category": "Accent",
+    "rule": "Codigo Braille Espanol",
+    "source": "ONCE Braille Standard",
+    "verified": true,
+    "note": "Spanish e accented é"
+  },
+  {
+    "id": "es-i-accent",
+    "language": "es",
+    "character": "í",
+    "brailleUnicode": "⠊",
+    "dots": [3, 4],
+    "type": "letter",
+    "category": "Accent",
+    "rule": "Codigo Braille Espanol",
+    "source": "ONCE Braille Standard",
+    "verified": true,
+    "note": "Spanish i accented í"
+  }
+]

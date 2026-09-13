@@ -1,0 +1,67 @@
+[
+  {
+    "id": "fr-a",
+    "language": "fr",
+    "character": "a",
+    "brailleUnicode": "⠁",
+    "dots": [1],
+    "type": "letter",
+    "category": "Alphabet",
+    "rule": "Code Braille Français",
+    "source": "AVH Braille Standard",
+    "verified": true,
+    "note": "French letter a"
+  },
+  {
+    "id": "fr-e-acute",
+    "language": "fr",
+    "character": "é",
+    "brailleUnicode": "⠿",
+    "dots": [1, 2, 3, 4, 5, 6],
+    "type": "letter",
+    "category": "Accent",
+    "rule": "Code Braille Français",
+    "source": "AVH Braille Standard",
+    "verified": true,
+    "note": "French e acute é"
+  },
+  {
+    "id": "fr-e-grave",
+    "language": "fr",
+    "character": "è",
+    "brailleUnicode": "⠮",
+    "dots": [2, 3, 4, 6],
+    "type": "letter",
+    "category": "Accent",
+    "rule": "Code Braille Français",
+    "source": "AVH Braille Standard",
+    "verified": true,
+    "note": "French e grave è"
+  },
+  {
+    "id": "fr-c-cedilla",
+    "language": "fr",
+    "character": "ç",
+    "brailleUnicode": "⠯",
+    "dots": [1, 2, 3, 4, 6],
+    "type": "letter",
+    "category": "Accent",
+    "rule": "Code Braille Français",
+    "source": "AVH Braille Standard",
+    "verified": true,
+    "note": "French c cedilla ç"
+  },
+  {
+    "id": "fr-a-grave",
+    "language": "fr",
+    "character": "à",
+    "brailleUnicode": "⠡",
+    "dots": [1, 2, 3, 5, 6],
+    "type": "letter",
+    "category": "Accent",
+    "rule": "Code Braille Français",
+    "source": "AVH Braille Standard",
+    "verified": true,
+    "note": "French a grave à"
+  }
+]

@@ -1,0 +1,93 @@
+[
+  {
+    "id": "zh-b",
+    "language": "zh",
+    "character": "b",
+    "brailleUnicode": "⠃",
+    "dots": [1, 2],
+    "type": "consonant",
+    "category": "Initial",
+    "rule": "Pinyin Braille Standard",
+    "source": "China Braille Press",
+    "verified": true,
+    "note": "Pinyin Initial b"
+  },
+  {
+    "id": "zh-p",
+    "language": "zh",
+    "character": "p",
+    "brailleUnicode": "⠏",
+    "dots": [1, 2, 3, 4],
+    "type": "consonant",
+    "category": "Initial",
+    "rule": "Pinyin Braille Standard",
+    "source": "China Braille Press",
+    "verified": true,
+    "note": "Pinyin Initial p"
+  },
+  {
+    "id": "zh-m",
+    "language": "zh",
+    "character": "m",
+    "brailleUnicode": "⠍",
+    "dots": [1, 3, 4],
+    "type": "consonant",
+    "category": "Initial",
+    "rule": "Pinyin Braille Standard",
+    "source": "China Braille Press",
+    "verified": true,
+    "note": "Pinyin Initial m"
+  },
+  {
+    "id": "zh-f",
+    "language": "zh",
+    "character": "f",
+    "brailleUnicode": "⠋",
+    "dots": [1, 2, 4],
+    "type": "consonant",
+    "category": "Initial",
+    "rule": "Pinyin Braille Standard",
+    "source": "China Braille Press",
+    "verified": true,
+    "note": "Pinyin Initial f"
+  },
+  {
+    "id": "zh-a",
+    "language": "zh",
+    "character": "a",
+    "brailleUnicode": "⠁",
+    "dots": [1],
+    "type": "vowel",
+    "category": "Final",
+    "rule": "Pinyin Braille Standard",
+    "source": "China Braille Press",
+    "verified": true,
+    "note": "Pinyin Final a"
+  },
+  {
+    "id": "zh-o",
+    "language": "zh",
+    "character": "o",
+    "brailleUnicode": "⠕",
+    "dots": [1, 3, 5],
+    "type": "vowel",
+    "category": "Final",
+    "rule": "Pinyin Braille Standard",
+    "source": "China Braille Press",
+    "verified": true,
+    "note": "Pinyin Final o"
+  },
+  {
+    "id": "zh-e",
+    "language": "zh",
+    "character": "e",
+    "brailleUnicode": "⠑",
+    "dots": [1, 5],
+    "type": "vowel",
+    "category": "Final",
+    "rule": "Pinyin Braille Standard",
+    "source": "China Braille Press",
+    "verified": true,
+    "note": "Pinyin Final e"
+  }
+]

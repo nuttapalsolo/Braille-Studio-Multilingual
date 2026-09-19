@@ -5,12 +5,32 @@
  */
 
 function doGet(e) {
-  var html = HtmlService.createTemplateFromFile('Index')
-    .evaluate()
-    .setTitle('Braille Studio - Google Sheets Sourced')
-    .addMetaTag('viewport', 'width=device-width, initial-scale=1')
-    .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
-  return html;
+  // Handle API JSON requests e.g. ?action=getData&sheetUrl=YOUR_SHEET_URL
+  if (e && e.parameter && (e.parameter.action === 'getData' || e.parameter.sheetUrl || e.parameter.spreadsheetId)) {
+    var sheetUrl = e.parameter.sheetUrl || e.parameter.spreadsheetId || '';
+    var sheetName = e.parameter.sheetName || '';
+    try {
+      var data = getBrailleDataFromSheet(sheetUrl, sheetName);
+      return ContentService.createTextOutput(JSON.stringify({ status: 'success', count: data.length, data: data }))
+        .setMimeType(ContentService.MimeType.JSON);
+    } catch (err) {
+      return ContentService.createTextOutput(JSON.stringify({ status: 'error', message: err.message }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+  }
+
+  // Serve HTML interface if Index.html exists
+  try {
+    var html = HtmlService.createTemplateFromFile('Index')
+      .evaluate()
+      .setTitle('Braille Studio - Multilingual Google Sheets')
+      .addMetaTag('viewport', 'width=device-width, initial-scale=1')
+      .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
+    return html;
+  } catch (err) {
+    return ContentService.createTextOutput("Braille Studio Google Apps Script API active!\nUsage: Add ?action=getData&sheetUrl=YOUR_GOOGLE_SHEET_URL to fetch JSON braille data.")
+      .setMimeType(ContentService.MimeType.TEXT);
+  }
 }
 
 function include(filename) {

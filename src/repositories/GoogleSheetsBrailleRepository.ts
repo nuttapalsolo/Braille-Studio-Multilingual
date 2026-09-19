@@ -60,11 +60,30 @@ export class GoogleSheetsBrailleRepository implements IBrailleRepository {
           return gasEntries;
         }
       } catch (e) {
-        console.warn('Google Apps Script call failed, trying published CSV/fallback:', e);
+        console.warn('Google Apps Script native call failed, trying published CSV/API fallback:', e);
       }
     }
 
-    // 2. Try fetching from published Google Sheet CSV URL if provided
+    // 2. Try fetching from Google Apps Script Web App Endpoint URL (script.google.com/macros/s/...)
+    if (this.currentSheetUrl && this.currentSheetUrl.includes('script.google.com/macros')) {
+      try {
+        const apiUrl = this.currentSheetUrl.includes('?') 
+          ? `${this.currentSheetUrl}&action=getData` 
+          : `${this.currentSheetUrl}?action=getData`;
+        const response = await fetch(apiUrl);
+        if (response.ok) {
+          const json = await response.json();
+          if (json && json.status === 'success' && Array.isArray(json.data) && json.data.length > 0) {
+            await this.fallbackRepo.saveEntriesBulk(json.data);
+            return json.data;
+          }
+        }
+      } catch (err) {
+        console.warn('Failed to fetch from Google Apps Script Web App API:', err);
+      }
+    }
+
+    // 3. Try fetching from published Google Sheet CSV URL if provided
     if (this.currentSheetUrl && (this.currentSheetUrl.includes('google.com/spreadsheets') || this.currentSheetUrl.includes('output=csv'))) {
       try {
         let csvUrl = this.currentSheetUrl;
@@ -90,7 +109,7 @@ export class GoogleSheetsBrailleRepository implements IBrailleRepository {
       }
     }
 
-    // 3. Default fallback: return cached repository dataset
+    // 4. Default fallback: return cached repository dataset
     return await this.fallbackRepo.getEntriesByLanguage(languageCode);
   }
 

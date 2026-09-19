@@ -1,9 +1,9 @@
-import type { IBrailleRepository } from '../repositories/IBrailleRepository';
-import { IndexedDBBrailleRepository } from '../repositories/IndexedDBBrailleRepository';
+import { GoogleSheetsBrailleRepository } from '../repositories/GoogleSheetsBrailleRepository';
 import { BrailleConverter, type ConversionResult } from '../engine/BrailleConverter';
 import { BrailleValidator } from '../engine/BrailleValidator';
 import { BrailleImporterExporter } from '../engine/BrailleImporterExporter';
 import { JapaneseBrailleViewerAdapter } from '../adapters/ExternalReferenceAdapter';
+import { speechService, SpeechService } from './SpeechService';
 import type {
   BrailleCharacterEntry,
   CorrectionRecord,
@@ -13,14 +13,26 @@ import type {
 } from '../types/braille';
 
 export class BrailleService {
-  private repository: IBrailleRepository;
+  private repository: GoogleSheetsBrailleRepository;
   private validator: BrailleValidator;
   private externalAdapter: JapaneseBrailleViewerAdapter;
 
-  constructor(repository?: IBrailleRepository) {
-    this.repository = repository || new IndexedDBBrailleRepository();
+  constructor(repository?: GoogleSheetsBrailleRepository) {
+    this.repository = repository || new GoogleSheetsBrailleRepository();
     this.validator = new BrailleValidator();
     this.externalAdapter = new JapaneseBrailleViewerAdapter();
+  }
+
+  public getSpeechService(): SpeechService {
+    return speechService;
+  }
+
+  public setGoogleSheetUrl(url: string) {
+    this.repository.setSheetUrl(url);
+  }
+
+  public getGoogleSheetUrl(): string {
+    return this.repository.getSheetUrl();
   }
 
   public async getLanguages(): Promise<LanguageMeta[]> {

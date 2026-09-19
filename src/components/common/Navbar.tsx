@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Languages,
   BookOpen,
@@ -8,7 +8,11 @@ import {
   History,
   Settings,
   Sparkles,
+  Volume2,
+  VolumeX,
+  FileSpreadsheet,
 } from 'lucide-react';
+import { speechService } from '../../services/SpeechService';
 
 export type NavTab =
   | 'converter'
@@ -34,6 +38,17 @@ export const Navbar: React.FC<NavbarProps> = ({
   setSelectedLanguage,
   languages,
 }) => {
+  const [isAudioMuted, setIsAudioMuted] = useState<boolean>(speechService.getIsMuted());
+
+  const toggleAudio = () => {
+    const nextState = !isAudioMuted;
+    setIsAudioMuted(nextState);
+    speechService.setMuted(nextState);
+    if (!nextState) {
+      speechService.speakText('เปิด เสียงอ่าน จุดเบรลล์');
+    }
+  };
+
   const navItems: Array<{ id: NavTab; label: string; icon: React.ReactNode; description: string }> = [
     {
       id: 'converter',
@@ -49,15 +64,15 @@ export const Navbar: React.FC<NavbarProps> = ({
     },
     {
       id: 'editor',
-      label: 'Braille Editor',
+      label: 'Braille Dot Audio Inspector',
       icon: <Edit3 className="w-5 h-5" aria-hidden="true" />,
-      description: 'Interactive 6/8-dot matrix editor',
+      description: 'Interactive dot visualizer with Thai speech audio',
     },
     {
       id: 'data-manager',
-      label: 'Data Manager',
+      label: 'Google Sheets Sync',
       icon: <Database className="w-5 h-5" aria-hidden="true" />,
-      description: 'Import, Export JSON/CSV and dataset corrections',
+      description: 'Connect & Sync dataset from Google Sheets',
     },
     {
       id: 'compare',
@@ -92,35 +107,64 @@ export const Navbar: React.FC<NavbarProps> = ({
               <div className="flex items-center space-x-2">
                 <h1 className="text-xl font-bold tracking-tight text-white flex items-center gap-2">
                   Braille Studio
-                  <span className="text-xs bg-indigo-500/20 text-indigo-300 font-semibold px-2 py-0.5 rounded-full border border-indigo-500/30">
-                    Multilingual
+                  <span className="text-xs bg-emerald-500/20 text-emerald-300 font-semibold px-2 py-0.5 rounded-full border border-emerald-500/30 flex items-center gap-1">
+                    <FileSpreadsheet className="w-3 h-3" />
+                    Google Sheets Sourced
                   </span>
                 </h1>
               </div>
               <p className="text-xs text-slate-400">
-                Universal Braille Translation, Editor & Data Management System
+                Universal Braille System powered by Google Sheets & Web Speech API Audio
               </p>
             </div>
           </div>
 
+          {/* Right Controls: Audio Voice Toggle & Language Selector */}
           <div className="flex items-center gap-3">
-            <label htmlFor="global-language-select" className="text-xs font-semibold text-slate-300 whitespace-nowrap flex items-center gap-1.5">
-              <Sparkles className="w-3.5 h-3.5 text-indigo-400" aria-hidden="true" />
-              Active Language:
-            </label>
-            <select
-              id="global-language-select"
-              value={selectedLanguage}
-              onChange={(e) => setSelectedLanguage(e.target.value)}
-              className="bg-slate-800 text-slate-100 text-sm font-medium border border-slate-700 rounded-lg px-3 py-1.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500 shadow-sm transition-all"
-              aria-label="Select active language dataset"
+            {/* Audio Speech Toggle Button */}
+            <button
+              type="button"
+              onClick={toggleAudio}
+              className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-bold border transition-all focus:outline-none focus-visible:ring-4 focus-visible:ring-indigo-400 ${
+                !isAudioMuted
+                  ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40 shadow-emerald-500/20 shadow'
+                  : 'bg-slate-800 text-slate-400 border-slate-700 hover:text-white'
+              }`}
+              aria-label={isAudioMuted ? 'Enable Braille Dot Audio Speech' : 'Disable Braille Dot Audio Speech'}
             >
-              {languages.map((lang) => (
-                <option key={lang.code} value={lang.code}>
-                  {lang.nativeName} ({lang.name}) {!lang.verified ? '⚠️ Unverified' : ''}
-                </option>
-              ))}
-            </select>
+              {!isAudioMuted ? (
+                <>
+                  <Volume2 className="w-4 h-4 text-emerald-400 animate-pulse" aria-hidden="true" />
+                  <span>เสียงอ่านจุด: เปิด (Voice ON)</span>
+                </>
+              ) : (
+                <>
+                  <VolumeX className="w-4 h-4 text-slate-400" aria-hidden="true" />
+                  <span>เสียงอ่านจุด: ปิด (Voice OFF)</span>
+                </>
+              )}
+            </button>
+
+            {/* Language Selector */}
+            <div className="flex items-center gap-2">
+              <label htmlFor="global-language-select" className="text-xs font-semibold text-slate-300 whitespace-nowrap flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-indigo-400" aria-hidden="true" />
+                Language:
+              </label>
+              <select
+                id="global-language-select"
+                value={selectedLanguage}
+                onChange={(e) => setSelectedLanguage(e.target.value)}
+                className="bg-slate-800 text-slate-100 text-sm font-medium border border-slate-700 rounded-lg px-3 py-1.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500 shadow-sm transition-all"
+                aria-label="Select active language dataset"
+              >
+                {languages.map((lang) => (
+                  <option key={lang.code} value={lang.code}>
+                    {lang.nativeName} ({lang.name}) {!lang.verified ? '⚠️ Unverified' : ''}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
         </div>
 

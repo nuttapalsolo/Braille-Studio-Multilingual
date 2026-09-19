@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { dotsToUnicode, formatDotsString } from '../engine/unicodeBraille';
+import { speechService } from '../services/SpeechService';
 
 export interface UseBrailleEditorProps {
   initialDots?: number[];
@@ -22,7 +23,6 @@ export function useBrailleEditor({
 
   const maxDots = mode === '6-dot' ? 6 : 8;
 
-  // Sync initial dots when prop changes
   useEffect(() => {
     setSelectedDots(initialDots);
   }, [JSON.stringify(initialDots)]);
@@ -45,6 +45,9 @@ export function useBrailleEditor({
           announceFn(msg);
         }
 
+        // Web Speech API Voice Announcement ("จุด 1", "จุด 2")
+        speechService.speakDot(dotNumber, !exists);
+
         return next;
       });
     },
@@ -54,20 +57,20 @@ export function useBrailleEditor({
   const setDots = useCallback((dots: number[]) => {
     const sorted = [...dots].filter(d => d >= 1 && d <= 8).sort((a, b) => a - b);
     setSelectedDots(sorted);
+    speechService.speakPattern(sorted);
   }, []);
 
   const clearDots = useCallback(() => {
     setSelectedDots([]);
     if (announceFn) announceFn('All dots cleared.');
+    speechService.speakText('ล้างจุดทั้งหมด');
   }, [announceFn]);
 
   const unicodeChar = dotsToUnicode(selectedDots);
   const formattedDots = formatDotsString(selectedDots);
 
-  // Keyboard shortcut listener
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      // Don't trigger if user is typing in a text input / textarea
       const target = e.target as HTMLElement;
       if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable)) {
         return;

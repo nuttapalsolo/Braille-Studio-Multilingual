@@ -10,7 +10,7 @@ class BrailleDexieDatabase extends Dexie {
 
   constructor() {
     super('MultilingualBrailleDB');
-    this.version(1).stores({
+    this.version(2).stores({
       entries: 'id, language, character, brailleUnicode, type, category, verified',
       corrections: 'id, entryId, language, character, timestamp, version',
       languages: 'code, name, file',

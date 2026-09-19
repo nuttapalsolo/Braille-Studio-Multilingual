@@ -10,7 +10,6 @@ import {
   Sparkles,
   Volume2,
   VolumeX,
-  FileSpreadsheet,
 } from 'lucide-react';
 import { speechService } from '../../services/SpeechService';
 
@@ -70,9 +69,9 @@ export const Navbar: React.FC<NavbarProps> = ({
     },
     {
       id: 'data-manager',
-      label: 'Google Sheets Sync',
+      label: 'Data Manager & Import/Export',
       icon: <Database className="w-5 h-5" aria-hidden="true" />,
-      description: 'Connect & Sync dataset from Google Sheets',
+      description: 'Manage local datasets, add/edit entries, import & export JSON/CSV',
     },
     {
       id: 'compare',
@@ -108,13 +107,13 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <h1 className="text-xl font-bold tracking-tight text-white flex items-center gap-2">
                   Braille Studio
                   <span className="text-xs bg-emerald-500/20 text-emerald-300 font-semibold px-2 py-0.5 rounded-full border border-emerald-500/30 flex items-center gap-1">
-                    <FileSpreadsheet className="w-3 h-3" />
-                    Google Sheets Sourced
+                    <Database className="w-3 h-3" />
+                    💾 Local Storage Ready
                   </span>
                 </h1>
               </div>
               <p className="text-xs text-slate-400">
-                Universal Braille System powered by Google Sheets & Web Speech API Audio
+                Offline-First Multilingual Braille System (IndexedDB & Web Speech API)
               </p>
             </div>
           </div>
